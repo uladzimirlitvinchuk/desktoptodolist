@@ -5,18 +5,50 @@ import desctop.todolist.logic.enums.Status;
 
 public class Task {
 
+    private int id;
     private String text;
-    private String startDate;
     private String endDate;
     private Priority priority;
     private Status status;
 
-    public Task(String text, String startDate, String endDate, Priority priority, Status status) {
+    public Task(int id, String text, String endDate, Priority priority, Status status) {
+        this.id = id;
         this.text = text;
-        this.startDate = startDate;
         this.endDate = endDate;
         this.priority = priority;
         this.status = status;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Task task = (Task) o;
+
+        if (id != task.id) return false;
+        if (!text.equals(task.text)) return false;
+        if (endDate != null ? !endDate.equals(task.endDate) : task.endDate != null) return false;
+        if (priority != task.priority) return false;
+        return status == task.status;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + text.hashCode();
+        result = 31 * result + (endDate != null ? endDate.hashCode() : 0);
+        result = 31 * result + (priority != null ? priority.hashCode() : 0);
+        result = 31 * result + (status != null ? status.hashCode() : 0);
+        return result;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getText() {
@@ -25,14 +57,6 @@ public class Task {
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public String getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
     }
 
     public String getEndDate() {

@@ -1,36 +1,18 @@
 package desctop.todolist;
 
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
+import desctop.todolist.logic.beans.Task;
+import desctop.todolist.logic.enums.Priority;
+import desctop.todolist.logic.enums.Status;
+import desctop.todolist.logic.utils.TaskConverter;
 import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
 
-public class Main extends Application{
+public class Main{
     Button button;
     public static void main(String[] args) {
-        launch(args);
+        //int id, String text, String endDate, Priority priority, Status status
+        System.out.println(TaskConverter.toCsvLineConvert(new Task(1, "text", "date", Priority.HIGH, Status.DONE)));
+
+
     }
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("ToDo list");
-        button = new Button("click");
-        button.setOnAction(event -> {
-            System.out.println("Hello");
-            System.out.println("second hello");
-        });
-
-        StackPane layout = new StackPane();
-        layout.getChildren().add(button);
-
-        Scene scene = new Scene(layout, 300, 250);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-
-
 
 }
