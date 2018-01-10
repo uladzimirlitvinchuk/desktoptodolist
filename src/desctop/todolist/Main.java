@@ -4,12 +4,11 @@ import desctop.todolist.logic.beans.Task;
 import desctop.todolist.logic.enums.Priority;
 import desctop.todolist.logic.enums.Status;
 import desctop.todolist.logic.utils.TaskConverter;
-import javafx.scene.control.Button;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Main{
-    public static Logger log = LogManager.getLogger(Main.class);
+    private static Logger log = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
         //int id, String text, String endDate, Priority priority, Status status

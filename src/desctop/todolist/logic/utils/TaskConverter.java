@@ -1,10 +1,14 @@
 package desctop.todolist.logic.utils;
 
+import desctop.todolist.Main;
 import desctop.todolist.logic.beans.Task;
 import desctop.todolist.logic.enums.Priority;
 import desctop.todolist.logic.enums.Status;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class TaskConverter {
+    private static Logger log = LogManager.getLogger(TaskConverter.class);
     public static Task toJavaConvert(String csvLine){
         int id = 0;
         String text = null;
