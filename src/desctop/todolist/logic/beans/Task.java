@@ -43,6 +43,17 @@ public class Task {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                ", endDate='" + endDate + '\'' +
+                ", priority=" + priority +
+                ", status=" + status +
+                '}';
+    }
+
     public int getId() {
         return id;
     }

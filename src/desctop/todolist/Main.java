@@ -11,8 +11,6 @@ public class Main{
     public static void main(String[] args) {
         //int id, String text, String endDate, Priority priority, Status status
         System.out.println(TaskConverter.toCsvLineConvert(new Task(1, "text", "date", Priority.HIGH, Status.DONE)));
-
-
     }
 
 }
