@@ -12,7 +12,6 @@ public class TaskConverter {
         Priority priority = null;
         Status status = null;
         try {
-            //1,texsdf sdf  260 sdf SDFt,23/11/2015,HIGH,DONE
             String[] arr = csvLine.split(",", 5);
             int lenght = arr.length;
             id = Integer.parseInt(arr[0]);
@@ -26,7 +25,7 @@ public class TaskConverter {
             }
 
         }catch (Exception e){
-
+            System.out.println(e.getMessage());
         }
         return new Task(id,text,date,priority,status);
     }
