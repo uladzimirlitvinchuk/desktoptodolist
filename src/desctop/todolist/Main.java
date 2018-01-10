@@ -10,7 +10,9 @@ public class Main{
     Button button;
     public static void main(String[] args) {
         //int id, String text, String endDate, Priority priority, Status status
-        System.out.println(TaskConverter.toCsvLineConvert(new Task(1, "text", "date", Priority.HIGH, Status.DONE)));
+        //System.out.println(TaskConverter.toCsvLineConvert(new Task(1, "text", "date", Priority.HIGH, Status.DONE)));
+        Task task = TaskConverter.toJavaConvert("1,texsdf sdf sdf SDFt,date,proir,status,fsdsd");
+        System.out.println();
     }
 
 }
